@@ -87,6 +87,7 @@ export const getGeography = async (req, res) => {
         return { id: country, value: count };
       }
     )
+    res.status(200).json(formattedLocations);
   } catch (error) {
     res.status(404).json({ message: error.message });
   }
