@@ -28,7 +28,7 @@ export const api = createApi({
     getGeography: build.query({
       query: () => "client/geography",
       providesTags: ["Geography"],
-    })
+    }),
   }),
 });
 
