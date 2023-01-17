@@ -1,10 +1,10 @@
 import React from "react";
 import { ResponsivePie } from "@nivo/pie";
-import { Box, Typo, Typography, useTheme } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
 import { useGetSalesQuery } from "state/api";
 
 const BreakdownChart = ({ isDashboard = false }) => {
-  const { data, isLoading } = useGetSalesQuery(isDashboard);
+  const { data, isLoading } = useGetSalesQuery();
   const theme = useTheme();
 
   if (!data || isLoading) return "Loading...";
@@ -100,7 +100,7 @@ const BreakdownChart = ({ isDashboard = false }) => {
             translateX: isDashboard ? 20 : 0,
             translateY: isDashboard ? 50 : 56,
             itemsSpacing: 0,
-            itemWidth: 100,
+            itemWidth: 85,
             itemHeight: 18,
             itemTextColor: "#999",
             itemDirection: "left-to-right",
@@ -111,7 +111,7 @@ const BreakdownChart = ({ isDashboard = false }) => {
               {
                 on: "hover",
                 style: {
-                  itemTextColor: theme.palette.primary[500]
+                  itemTextColor: theme.palette.primary[500],
                 },
               },
             ],
@@ -127,8 +127,8 @@ const BreakdownChart = ({ isDashboard = false }) => {
         pointerEvents="none"
         sx={{
             transform: isDashboard
-            ? "translate(-75%, -170%"
-            : "translate(50%, -100%"
+            ? "translate(-75%, -170%)"
+            : "translate(-50%, -100%)"
         }}>
             <Typography variant="h6">
                 {!isDashboard && "Total: "} ${data.yearlySalesTotal}
