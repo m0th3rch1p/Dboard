@@ -23,6 +23,7 @@ import {
   MenuItem,
   useTheme,
 } from "@mui/material";
+import Signin from "./SignIn";
 
 const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
   const dispatch = useDispatch();
@@ -112,6 +113,7 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
                 sx={{ color: theme.palette.secondary[100], fontSize: "25px" }}
               />
             </Button>
+            <Signin />
             <Menu
               anchorEl={anchorEl}
               open={isOpen}

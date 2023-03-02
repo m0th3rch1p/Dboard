@@ -24,37 +24,40 @@ const Customers = () => {
     // },
     { field: "country", headerName: "Country", flex: 0.4 },
     { field: "occupation", headerName: "Occupation", flex: 1 },
-    { field: "Role", headerName: "Role", flex: 0.5 },
+    { field: "Role", headerName: "Role", flex: 0.5 }
   ];
 
   return (
     <Box m="1.5rem 2.5rem">
       <Header title="Customers" subtitle={"Here's a list of your Customers"} />
-      <Box mt="40px" height="75vh" 
-      sx={{
-        "& .MuiDataGrid-root": {
-            border: "none",
-        },
-        "& .MuiDataGrid-cell": {
-            borderBottom: "none",
-        },
-        "& .MuiDataGrid-columnHeaders": {
+      <Box
+        mt="40px"
+        height="75vh"
+        sx={{
+          "& .MuiDataGrid-root": {
+            border: "none"
+          },
+          "& .MuiDataGrid-cell": {
+            borderBottom: "none"
+          },
+          "& .MuiDataGrid-columnHeaders": {
             backgroundColor: theme.palette.background.alt,
             color: theme.palette.secondary[100],
-            borderBottom: "none",
-        },
-        "& .MuiDataGrid-footerContainer": {
+            borderBottom: "none"
+          },
+          "& .MuiDataGrid-footerContainer": {
             backgroundColor: theme.palette.background.alt,
             color: theme.palette.secondary[100],
-            borderTop: "none",
-        },
-        "& .MuiDataGrid-virtualScroller": {
-            backgroundColor: theme.palette.primary.light,
-        }, 
-        "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
-            color: `${theme.palette.secondary[200]} !important`,
-        },
-      }}>
+            borderTop: "none"
+          },
+          "& .MuiDataGrid-virtualScroller": {
+            backgroundColor: theme.palette.primary.light
+          },
+          "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
+            color: `${theme.palette.secondary[200]} !important`
+          }
+        }}
+      >
         <DataGrid
           loading={isLoading || !data}
           getRowId={(row) => row._id}
