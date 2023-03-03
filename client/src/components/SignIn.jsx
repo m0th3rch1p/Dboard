@@ -35,6 +35,7 @@ const Signin = () => {
         onBackdropClick={handleBackdropClick}
       >
         <Box
+          onClick={handleBackdropClick}
           display="flex"
           justifyContent="center"
           alignItems="center"
@@ -56,7 +57,7 @@ const Signin = () => {
             justifyContent="center"
             alignItems="center"
           >
-            <Box onClick={handleBackdropClick}>
+            <Box sx={{padding: "20px", border: 1, borderColor: "primary", borderRadius: "16px"}}>
               <Typography variant="h1" color="primary">
                 Login
               </Typography>
