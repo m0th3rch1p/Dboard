@@ -15,6 +15,7 @@ import Daily from "scenes/daily";
 import Monthly from "scenes/monthly";
 import Breakdown from "scenes/breakdown";
 import Admin from "scenes/admin"
+import Login from "scenes/login"
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
           <Route path="/breakdown" element={<Breakdown />} />
           <Route path="/admin" element={<Admin />} />
         </Route>
+        <Route path="/login" element={<Login />} />
       </Routes>
     </ThemeProvider>
     </BrowserRouter>
